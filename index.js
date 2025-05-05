@@ -52,7 +52,7 @@ async function fund() {
         value: ethers.utils.parseEther(ethAmount),
       });
       await listenForTransactionMine(transactionResponse, provider);
-      console.log(`Funded ${ethers.utils.parseEther} ETH successfully.`);
+      console.log(`Funded ${ethAmount} ETH successfully.`);
     } catch (error) {
       console.log("funding error => ",error);
     }
@@ -75,7 +75,7 @@ async function withdraw() {
       const transactionResponse = await contract.withdraw();
       await listenForTransactionMine(transactionResponse, provider);
       await transactionResponse.wait(1);
-      console.log(`Withdrawed ${ethers.utils.parseEther} ETH successfully.`);
+      console.log(`Withdrawed ${ethers.utils.formatEther(balance)} ETH successfully.`);
     } catch (error) {
       console.log("withdraw error => ",error);
     }
