@@ -101,7 +101,12 @@ async function getBalance() {
 }
 
 
-
+/*
+It watches the blockchain for that transaction's hash.
+When the transaction is included in a block (mined):
+It logs a message.
+It resolves the Promise.
+*/
 function listenForTransactionMine(transactionResponse, provider) {
   console.log(`Mining ${transactionResponse.hash}`);
   return new Promise((resolve, reject) => {
