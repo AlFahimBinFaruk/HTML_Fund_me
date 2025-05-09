@@ -1,4 +1,4 @@
-export const contractAddress = "0xEDc71F5b523d77Dbbaa4090376e01ad70F704E8c";
+export const contractAddress = "0xBf6197f75205E43976c7A88498F77d5Ff049E6c9";
 export const abi = [
   {
     inputs: [
@@ -10,6 +10,22 @@ export const abi = [
     ],
     stateMutability: "nonpayable",
     type: "constructor",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "sent",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "required",
+        type: "uint256",
+      },
+    ],
+    name: "NotEnoughETH",
+    type: "error",
   },
   {
     inputs: [],
